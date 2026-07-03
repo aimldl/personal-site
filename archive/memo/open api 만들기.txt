@@ -1,0 +1,8 @@
+open api 만들기.txt
+구글 검색: open api 만들기
+## 오픈 API, https://ko.wikipedia.org/wiki/%EC%98%A4%ED%94%88_API
+## 함수에 대한 OpenAPI 정의 만들기, https://docs.microsoft.com/ko-kr/azure/azure-functions/functions-openapi-definition
+## OpenAPI를 사용한 REST API 문서 생성, https://www.ibm.com/support/knowledgecenter/ko/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_api_openapi.html
+## Open API 액세스 토큰 배포를 위한 플랫폼 만들기, https://github.com/airpage/restapiplatform
+
+

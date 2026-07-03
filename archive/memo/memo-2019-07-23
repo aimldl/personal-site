@@ -1,0 +1,9 @@
+구글 검색: anaconda tf.test.is_gpu_available() false
+
+[Tensorflow doesn't seem to see my gpu](https://stackoverflow.com/questions/41402409/tensorflow-doesnt-seem-to-see-my-gpu)
+
+$ pip3 install tensorflow_hub
+pip3 install tensorflow-hub
+pip3 install tf-nightly
+pip3 install contractions
+pip3 install beautifulsoup4

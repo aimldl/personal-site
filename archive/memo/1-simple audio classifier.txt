@@ -1,0 +1,302 @@
+
+구글 검색: audio classification tutorial
+Tutorial, https://blogs.rstudio.com/tensorflow/posts/2018-06-06-simple-audio-classification-keras/
+전체 코드, https://github.com/dfalbel/speech-keras
+
+$ git clone https://github.com/dfalbel/speech-keras.git
+'speech-keras'에 복제합니다...
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 82 (delta 2), reused 0 (delta 0), pack-reused 75
+오브젝트 묶음 푸는 중: 100% (82/82), 완료.
+$
+
+1-simple-audio-classifier$ ls
+data  speech-keras
+
+### 도커 컨테이너
+user@b62128106f1a:~$ l
+bin/  downloads/  lib/  uploads/
+user@b62128106f1a:~$ git clone https://github.com/dfalbel/speech-keras.git
+Cloning into 'speech-keras'...
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 82 (delta 2), reused 0 (delta 0), pack-reused 75
+Unpacking objects: 100% (82/82), done.
+user@b62128106f1a:~$ ls
+bin  downloads  lib  speech-keras  uploads
+
+
+### github 파일 실행
+Error in library(stringr) : ‘stringr’이라고 불리는 패키지가 없습니다
+Error in library(tfdatasets) : 
+  ‘tfdatasets’이라고 불리는 패키지가 없습니다
+Error in library(keras) : ‘keras’이라고 불리는 패키지가 없습니다
+Fatal error: ?? '04-report.R'? ??? ??????: ?? ???? ????? ????
+
+
+구글 검색: "Error in library(stringr) : ‘stringr’"
+구글 검색: R packages
+
+### stringr 패키지 설치 하기
+> install.packages("stringr")
+...
+* installing *source* package ‘stringr’ ...
+** 패키지 ‘stringr’는 성공적으로 압축해제되었고, MD5 sums 이 확인되었습니다
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** preparing package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded
+* DONE (stringr)
+
+다운로드한 소스 패키지들은 다음의 위치에 있습니다
+	‘/tmp/Rtmpcs3O7A/downloaded_packages’
+> 
+
+### stringr 패키지 설치 확인 하기
+> library('stringr')
+> search()
+ [1] ".GlobalEnv"        "package:stringr"   "package:stats"    
+ [4] "package:graphics"  "package:grDevices" "package:utils"    
+ [7] "package:datasets"  "package:methods"   "Autoloads"        
+[10] "package:base"     
+> 
+
+### tfdatasets 설치하기
+> install.packages("tfdatasets")
+
+* installing *source* package ‘tfdatasets’ ...
+** 패키지 ‘tfdatasets’는 성공적으로 압축해제되었고, MD5 sums 이 확인되었습니다
+** R
+** inst
+** preparing package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded
+* DONE (tfdatasets)
+
+다운로드한 소스 패키지들은 다음의 위치에 있습니다
+	‘/tmp/Rtmpcs3O7A/downloaded_packages’
+> 
+
+### tfdatasets 설치 확인하기
+> library("tfdatasets")
+> search()
+ [1] ".GlobalEnv"         "package:tfdatasets" "package:stringr"   
+ [4] "package:stats"      "package:graphics"   "package:grDevices" 
+ [7] "package:utils"      "package:datasets"   "package:methods"   
+[10] "Autoloads"          "package:base"      
+> 
+
+### keras 패키지 설치 하기
+> install.packages("keras")
+...
+* installing *source* package ‘zeallot’ ...
+** 패키지 ‘zeallot’는 성공적으로 압축해제되었고, MD5 sums 이 확인되었습니다
+** R
+** inst
+** preparing package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded
+* DONE (zeallot)
+* installing *source* package ‘keras’ ...
+** 패키지 ‘keras’는 성공적으로 압축해제되었고, MD5 sums 이 확인되었습니다
+** R
+** inst
+** preparing package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded
+* DONE (keras)
+
+다운로드한 소스 패키지들은 다음의 위치에 있습니다
+	‘/tmp/Rtmpcs3O7A/downloaded_packages’
+>
+
+### keras 패키지 설치 확인하기
+> library("keras")
+> search()
+ [1] ".GlobalEnv"         "package:keras"      "package:tfdatasets"
+ [4] "package:stringr"    "package:stats"      "package:graphics"  
+ [7] "package:grDevices"  "package:utils"      "package:datasets"  
+[10] "package:methods"    "Autoloads"          "package:base"      
+> 
+
+## 2번째 에러
+Error in library(dplyr) : ‘dplyr’이라고 불리는 패키지가 없습니다
+실행이 정지되었습니다
+에러: Installation of TensorFlow not found.
+
+문제해결
+Error in library(dplyr) : ‘dplyr’이라고 불리는 패키지가 없습니다
+
+> install.packages("dplyr")
+...
+installing to /usr/local/lib/R/site-library/dplyr/libs
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** preparing package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded
+* DONE (dplyr)
+
+The downloaded source packages are in
+	'/tmp/RtmpzXzYjw/downloaded_packages'
+> 
+
+에러: Installation of TensorFlow not found.
+TensorFlow의 도커 컨테이너에서 R-base 및 필요 패키지를 모두 설치함.
+
+그리고 다시 시작.
+
+## Rscript로 실행
+user@b62128106f1a:~$ cd speech-keras/
+user@b62128106f1a:~/speech-keras$ ls
+00-download.R  01-import.R  02-generator.R  03-model.R  04-report.Rmd  plots  speech-keras.Rproj
+user@b62128106f1a:~/speech-keras$ Rscript 00-download.R 
+
+
+문제
+$ Rscript 01-import.R 
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Error in loadNamespace(name) : there is no package called 'fs'
+Calls: :: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+$
+
+해결
+> install.packages("fs")
+
+~/speech-keras$ Rscript 01-import.R 
+
+해결 후 실행결과
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Warning message:
+`data_frame()` is deprecated, use `tibble()`.
+This warning is displayed once per session. 
+
+Q: warning인데 괜찮나?
+
+문제: Error in py_call_impl(callable, dots$args, dots$keywords) : 
+  TypeError: Expected binary or unicode string, got 9
+
+
+$ Rscript 03-model.R 
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Error in py_call_impl(callable, dots$args, dots$keywords) : 
+  TypeError: Expected binary or unicode string, got 18
+
+Detailed traceback: 
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/data/ops/dataset_ops.py", line 254, in from_tensor_slices
+    return TensorSliceDataset(tensors)
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/data/ops/dataset_ops.py", line 1166, in __init__
+    for i, t in enumerate(nest.flatten(tensors))
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/data/ops/dataset_ops.py", line 1166, in <listcomp>
+    for i, t in enumerate(nest.flatten(tensors))
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/ops.py", line 998, in convert_to_tensor
+    as_ref=False)
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/ops.py", line 1094, in internal_convert_to_tensor
+    ret = conversion_func(value, dtype=dtype, name=name, as_ref=as_ref)
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/constant_op.py", lin
+Calls: data_generator ... is_dataset -> inherits -> <Anonymous> -> py_call_impl -> .Call
+Execution halted
+
+
+구글 검색: R "TypeError: Expected binary or unicode string, got 18"
+딱히 명확해 보이는 해결책이 없어서 막힘. 어떻게 해야할지 모르겠음.
+일단 하나하나 찾아봅세. => 결국 에러가 난 line을 찾아서 => 해당 라인을 이해하는데 필요한 것을 공부하는 중...
+
+> library(dplyr)
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+> 
+
+
+# Train model
+model %>% fit_generator(
+  generator = ds_train,
+  steps_per_epoch = 0.7*nrow(df)/32,
+  epochs = 10, 
+  validation_data = ds_test, 
+  validation_steps = 0.3*nrow(df)/32
+)
+
+save_model_hdf5(model, "model.hdf5")
+
+user@b62128106f1a:~/speech-keras$ #
+
+### 01-import.R의 결과물
+참고:"R object, objects, workspace를 저장/로딩 하기"
+
+03-model.R을 시작함에 있어서, 01-import.R까지는 신경쓰지 않아도 된다.
+왜냐하면 다운 받고, .rds파일에 저장하기 때문이다.
+
+$ cat 03-model.R  
+library(keras)
+library(dplyr)
+source("02-generator.R")
+
+02-generator.R에는 data_generator함수의 정의가 들어있다.
+
+R-02-generator.R.txt와 R-03-model.R.txt에 기록
+

@@ -1,0 +1,32 @@
+Multilingual_Speech_Corpus_2019-04-16.txt
+
+aimldl@GPU-Desktop
+
+## Initial Inspection
+
+### Number of .pcm files
+~/speech_corpus/HMT/ENG$ ls -LR | grep ".pcm" | wc -l
+90748
+~/speech_corpus/HMT/CHN$ ls -LR | grep ".pcm" | wc -l
+84359
+~/speech_corpus/HMT/JPN$ ls -LR | grep ".pcm" | wc -l
+40270
+
+구글 검색: linux command to list all files in subdirectory
+참고 문서: LINUX Recursively list all files in a directory including files in symlink directories, https://stackoverflow.com/questions/105212/linux-recursively-list-all-files-in-a-directory-including-files-in-symlink-direc
+
+### Transcripts
+~/speech_corpus/HMT/CHN$
+eng_20180703_110spkrs_list.txt
+eng_20180730_110spkrs_list.txt
+
+~/speech_corpus/HMT/JPN$
+jap_20180808_110spkrs_list.txt
+
+중국어는 없음.
+~/speech_corpus/HMT/CHN$ find . -name "*.txt"
+~/speech_corpus/HMT/CHN$ 
+
+## .pcm에서 .wav로 변환하기
+
+

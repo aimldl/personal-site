@@ -1,0 +1,86 @@
+LID서버_앱테스트.txt
+
+TODO
+adb로 김진원 수석에게 개인 메일로 받은 .apk파일을 설치.
+$ adb install -r [file_name].apk 
+
+LCD단말에서 LID서버 동작 여부 확인하기.
+
+웹브라우저로 확인
+http://59.10.6.134:5005/test_hello
+
+
+aimldl@GPU-Desktop
+$ adb connect 192.168.0.50
+connected to 192.168.0.50:5555
+$ adb devices
+List of devices attached
+192.168.0.50:5555	device
+
+$ adb install -r LID_debug-01.00.00.apk 
+[100%] /data/local/tmp/LID_debug-01.00.00.apk
+	pkg: /data/local/tmp/LID_debug-01.00.00.apk
+Success
+$
+
+
+2019-04-15 (Mon)
+
+root@fe401a63c07f:/LID# python LID_server_ver_07.py 
+build_graph...
+WARNING:tensorflow:From /usr/local/lib/python3.5/dist-packages/tensorflow/python/ops/rnn.py:430: calling reverse_sequence (from tensorflow.python.ops.array_ops) with seq_dim is deprecated and will be removed in a future version.
+Instructions for updating:
+seq_dim is deprecated, use seq_axis instead
+WARNING:tensorflow:From /usr/local/lib/python3.5/dist-packages/tensorflow/python/util/deprecation.py:454: calling reverse_sequence (from tensorflow.python.ops.array_ops) with batch_dim is deprecated and will be removed in a future version.
+Instructions for updating:
+batch_dim is deprecated, use batch_axis instead
+build_graph in 1.114121913909912 s
+RNN/LSTM/Bi-LSTM hidden dims: [512, 512]
+Train model Build on GPU #0, reuse: False
+2019-04-15 04:38:33.576382: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-04-15 04:38:33.762273: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1405] Found device 0 with properties: 
+name: Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0000:06:00.0
+totalMemory: 14.73GiB freeMemory: 14.22GiB
+2019-04-15 04:38:33.762309: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1484] Adding visible gpu devices: 0
+2019-04-15 04:38:34.104987: I tensorflow/core/common_runtime/gpu/gpu_device.cc:965] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-04-15 04:38:34.105038: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971]      0 
+2019-04-15 04:38:34.105045: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] 0:   N 
+2019-04-15 04:38:34.105479: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1097] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 13749 MB memory) -> physical GPU (device: 0, name: Tesla T4, pci bus id: 0000:06:00.0, compute capability: 7.5)
+ * Serving Flask app "LID_server_ver_07" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+Traceback (most recent call last):
+  File "LID_server_ver_07.py", line 256, in <module>
+    app.run(host='0.0.0.0', port=PORT)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 943, in run
+    run_simple(host, port, self, **options)
+  File "/usr/local/lib/python3.5/dist-packages/werkzeug/serving.py", line 814, in run_simple
+    inner()
+  File "/usr/local/lib/python3.5/dist-packages/werkzeug/serving.py", line 774, in inner
+    fd=fd)
+  File "/usr/local/lib/python3.5/dist-packages/werkzeug/serving.py", line 660, in make_server
+    passthrough_errors, ssl_context, fd=fd)
+  File "/usr/local/lib/python3.5/dist-packages/werkzeug/serving.py", line 577, in __init__
+    self.address_family), handler)
+  File "/usr/lib/python3.5/socketserver.py", line 440, in __init__
+    self.server_bind()
+  File "/usr/lib/python3.5/http/server.py", line 138, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/lib/python3.5/socketserver.py", line 454, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+root@fe401a63c07f:/LID# read escape sequence
+
+port 충돌됨. 포트를 잡아 먹고 있는 process를 kill함.
+
+$ ps -fA | grep python
+root       861     1  0  4월11 ?      00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root      1105     1  0  4월11 ?      00:00:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+aimldl   20710  1320  0 11:00 tty1     00:00:18 /usr/bin/python /usr/bin/terminator
+aimldl   25720 24610  0 17:45 pts/3    00:00:00 grep --color=auto python
+$ kill -9 [PID]
+
+

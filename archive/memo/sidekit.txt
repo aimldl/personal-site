@@ -1,0 +1,22 @@
+
+
+구글 검색: python i-vector
+
+참고 문서: Welcome to SIDEKIT 1.3.1 documentation!, https://projets-lium.univ-lemans.fr/sidekit/index.html
+Run an i-vector system, https://projets-lium.univ-lemans.fr/sidekit/tutorial/sre10_iv.html#run-an-i-vector-system
+
+What is the meaning of i-vector and PLDA?, https://www.researchgate.net/post/What_is_the_meaning_of_i-vector_and_PLDA
+Belal Medhat
+The British University in Egypt
+Hi I think this link calculate the I-Vector and the PDLA using free Python scripts, you can download them and run them.
+http://www-lium.univ-lemans.fr/sidekit/tutorial/sre10_iv_mfcc.html
+Run the tests Using a Probabilistic Linear Dscriminant Analysis (PLDA)
+Train the i-vector system. First, define a FeatureServer to load alreday extracted features stored in SPRO4 format
+I think these terms (I Vector and PDLA) are related to feature extraction and recognition.
+
+Enter the SIDEKIT
+https://projets-lium.univ-lemans.fr/sidekit/tutorial/shorttuto.html
+
+Additional materials
+https://projets-lium.univ-lemans.fr/sidekit/addon/index.html
+

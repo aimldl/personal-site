@@ -1,0 +1,20 @@
+raspberry pi for yamaha montage.txt
+
+Google search: yamaha montage raspberry pi
+
+https://www.yamahasynth.com/ask-a-question/roli-to-montage
+Christine
+I recorded a video about making a Roli patch for the Montage here: https://www.youtube.com/watch?v=dXg_cEjWsBM&t=1s It's done for AWM2 but the same principles work for FM-X
+
+This was done wired via a computer (raspberry pi for portability) rather than using a direct connection though. There are a couple of reasons why you might want to go via a computer. 
+
+First, and most annoyingly, the Seaboard doesn't reset the aftertouch when starting a new note so you can get 'pings' when you press a new note and it starts with the AT value of the previous one. This is particularly annoying when playing very softly and legato - which I like to do on the Roli. You can get round this in software of course.
+Secondly, the Seaboard has 'slide' mapped unalterably to CC 74 (brightness). which is a good default (it changes the filter cutoff) but sometimes I want it to do other things.
+
+http://sandsoftwaresound.net/raspberry-pi/
+
+Google search: raspberry pi midi controller
+https://www.indiegogo.com/projects/pisound-audio-midi-interface-for-raspberry-pi#/
+http://rpc.gehennom.org/
+https://www.raspberrypi.org/forums/viewtopic.php?t=144287
+

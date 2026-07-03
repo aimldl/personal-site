@@ -1,0 +1,12 @@
+Udacity-usefullinks.txt
+
+https://codebuddies.org/about
+https://www.codenewbie.org/
+https://stackoverflow.com/
+https://www.codeproject.com/
+https://gitter.im/home/explore
+
+https://gitter.im/pydata/pandas?source=explore
+https://gitter.im/scikit-learn/scikit-learn?source=explore
+https://gitter.im/Keras-io/Lobby?source=explore
+

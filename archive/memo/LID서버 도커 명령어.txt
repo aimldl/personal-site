@@ -1,0 +1,84 @@
+LID서버 도커 명령어.txt
+
+ubuntu@ubuntu-PowerEdge-R730:~$ docker exec -it lid /bin/bash
+root@fe401a63c07f:/notebooks# ls
+1_hello_tensorflow.ipynb  2_getting_started.ipynb  3_mnist_from_scratch.ipynb  BUILD  LICENSE
+root@fe401a63c07f:/notebooks# cd ..
+root@fe401a63c07f:/# ls
+LID   dev   lib64      opt   run_jupyter.sh  tensorflow_gpu-1.10.0-cp35-cp35m-manylinux1_x86_64.whl
+bin   etc   media      proc  sbin            tmp
+boot  home  mnt        root  srv             usr
+data  lib   notebooks  run   sys             var
+root@fe401a63c07f:/# cd LID/
+root@fe401a63c07f:/LID# ls
+LID_inference.py      __pycache__            feat_util.py           network_inference.py
+LID_server_ver_07.py  data                   inspect_checkpoint.py  phone_utils.py
+RNNCell.py            dynamic_brnn_phone.py  log                    run
+root@fe401a63c07f:/LID# history
+    1  ll
+    2  cd /
+    3  ll
+    4  vi r
+    5  apt-get update
+    6  apt-get install vim
+    7  python
+    8  pip install resampy
+    9  pip install librosa
+   10  pip install python_speech_features
+   11  pip install webrtcvad
+   12  ll
+   13  cd /data
+   14  ll
+   15  cd ..
+   16  ll
+   17  mkdir LID
+   18  ll
+   19  cd LID/
+   20  cp /data/LID_server_v07.zip ./
+   21  ll
+   22  unzip
+   23  unzip ./LID_server_v07.zip 
+   24  ll
+   25  rm ./LID_server_v07
+   26  rm -rf ./LID_server_v07
+   27  ll
+   28  unzip LID_server_v07.zip 
+   29  ll
+   30  rm ./LID_server_v07.zip 
+   31  ll
+   32  cd LID_server_v07/
+   33  ll
+   34  mv ./* ../
+   35  ll
+   36  cd ..
+   37  ll
+   38  rmdir LID_server_v07/
+   39  ll
+   40  vi LID_server_ver_07.py 
+   41  python LID_server_ver_07.py 
+   42  pip install flask
+   43  python LID_server_ver_07.py 
+   44  vi network_inference.py 
+   45  python LID_server_ver_07.py 
+   46  ll
+   47  cp /data/phone_utils.py ./
+   48  python LID_server_ver_07.py 
+   49  cp /data/RNNCell.py ./
+   50  python LID_server_ver_07.py 
+   51  exit
+   52  ll
+   53  ps
+   54  ps -ef
+   55  exit
+   56  ll
+   57  cd /LID/
+   58  ll
+   59  vi LID_server_ver_07.py 
+   60  exit
+   61  ls
+   62  cd ..
+   63  ls
+   64  cd LID/
+   65  ls
+   66  history
+

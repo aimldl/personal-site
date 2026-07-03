@@ -1,0 +1,9 @@
+Types of flow diagram.txt
+
+Alluvial diagram, https://en.wikipedia.org/wiki/Alluvial_diagram
+= a type of flow diagram
+Alluvial fan, https://en.wikipedia.org/wiki/Alluvial_fan
+
+Sankey diagram, https://en.wikipedia.org/wiki/Sankey_diagram
+
+
